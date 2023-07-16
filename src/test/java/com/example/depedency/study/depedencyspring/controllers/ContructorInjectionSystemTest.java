@@ -2,17 +2,19 @@ package com.example.depedency.study.depedencyspring.controllers;
 
 import com.example.depedency.study.depedencyspring.services.HelloServiceImpl;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@SpringBootTest
 class ContructorInjectionSystemTest {
 
-    //TUDO ATE AGORA E SEM O SPRING, ATE AGORA
+    @Autowired
     ContructorInjectionSystem contructorInjectionSystem;
 
     @Test
     void hello() {
-        contructorInjectionSystem = new ContructorInjectionSystem(new HelloServiceImpl());
         System.out.println(contructorInjectionSystem.hello());
     }
 
