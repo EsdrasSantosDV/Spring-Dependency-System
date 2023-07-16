@@ -1,7 +1,5 @@
 package com.example.depedency.study.depedencyspring.controllers;
 
-import com.example.depedency.study.depedencyspring.services.HelloServiceImpl;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -9,20 +7,18 @@ import org.springframework.test.context.ActiveProfiles;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-
-//PRECISAMOS COLOCAR TAMBNEM O CONTEXTO DO SPRING BOOT TESTE
-
+//PODEMOS REALIZAR TESTES DE PERFIS, E ANALISAR COMO FUNCIONA
+//A INJEÇÃO DE DEPENDENCIA COM O PERFIL ATIVO
+@ActiveProfiles("EN")
 @SpringBootTest
-class SetDependencyControllerTest {
+class TranslationControllerTest {
 
     @Autowired
-    SetDependencyController setDependencyController;
+    TranslationController translationController;
 
 
     @Test
-    void hello()
-    {
-        System.out.println(setDependencyController.sayHello());
+    void hello() {
+        System.out.println(translationController.hello());
     }
-
 }
