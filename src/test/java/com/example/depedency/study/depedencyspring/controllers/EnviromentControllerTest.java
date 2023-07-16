@@ -7,22 +7,18 @@ import org.springframework.test.context.ActiveProfiles;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-//PODEMOS REALIZAR TESTES DE PERFIS, E ANALISAR COMO FUNCIONA
-//A INJEÇÃO DE DEPENDENCIA COM O PERFIL ATIVO
-
-
-//ELE DA PAU AQUI TBM SE DEIXAR SO ASSIM NO TESTE
-//@ActiveProfiles("ES")
-@ActiveProfiles({"ES", "alfa"})
+//PRECISA ADICIONAR TBM O DEFAULT VALUE, PRA PARTE DA TRADUÇÃO TBM VIU, SENÃO DA PAU
+@ActiveProfiles({"prod", "EN"})
 @SpringBootTest
-class TranslationControllerTest {
+class EnviromentControllerTest {
 
     @Autowired
-    TranslationController translationController;
-
+    EnviromentController  enviromentController;
 
     @Test
-    void hello() {
-        System.out.println(translationController.hello());
+    void getEnviroment() {
+        System.out.println(enviromentController.getEnviroment());
     }
+
+
 }
